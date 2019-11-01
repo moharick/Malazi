@@ -9,3 +9,28 @@ from django.contrib.auth.decorators import login_required
 
 def home(request):
     return render(request, 'home.html')
+
+def register(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            new_user = form.save(commit=False)
+            new_user.save()
+            Student.objects.create(user=new_user)
+            cd = form.cleaned_data
+            user = authenticate(
+                request,
+                username=cd['username'],
+                password=cd['password1'])
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return redirect('login/edit/')
+                else:
+                    return HttpResponse('Disabled account')
+            else:
+                return HttpResponse('Invalid Login')
+    else:
+        form = UserForm()
+        args = {'form': form}
+        return render(request, 'reg_form.html', args)
