@@ -51,3 +51,19 @@ class Room(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Hostel(models.Model):
+    name = models.CharField(max_length=5)
+    gender_choices = [('M', 'Male'), ('F', 'Female')]
+    gender = models.CharField(
+        choices=gender_choices,
+        max_length=1,
+        default=None,
+        null=True)
+    course = models.ManyToManyField('Course', default=None, blank=True)
+    caretaker = models.CharField(max_length=100, blank=True)
+
+    def __str__(self):
+        return self.name
+
