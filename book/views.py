@@ -215,46 +215,46 @@ def logout_view(request):
     return redirect('/')
 
 
-def BH5_Floor1(request):
+def Floor1(request):
     room_list = Room.objects.order_by('name')
     room_dict = {'rooms':room_list}
-    return render(request, 'BH5_Floor1.html', context=room_dict)
+    return render(request, 'Floor1.html', context=room_dict)
 
 
-def BH5_Floor2(request):
+def Floor2(request):
     room_list = Room.objects.order_by('name')
     room_dict = {'rooms':room_list}
-    return render(request, 'BH5_Floor2.html', context=room_dict)
+    return render(request, 'Floor2.html', context=room_dict)
 
 
-def BH5_Floor3(request):
+def Floor3(request):
     room_list = Room.objects.order_by('name')
     room_dict = {'rooms':room_list}
-    return render(request, 'BH5_Floor3.html', context=room_dict)
+    return render(request, 'Floor3.html', context=room_dict)
 
 
-def BH5_Floor4(request):
+def Floor4(request):
     room_list = Room.objects.order_by('name')
     room_dict = {'rooms':room_list}
-    return render(request, 'BH5_Floor4.html', context=room_dict)
+    return render(request, 'Floor4.html', context=room_dict)
 
 
-def BH5_Floor5(request):
+def Floor5(request):
     room_list = Room.objects.order_by('name')
     room_dict = {'rooms':room_list}
-    return render(request, 'BH5_Floor5.html',context=room_dict)
+    return render(request, 'Floor5.html',context=room_dict)
 
 
-def BH5_Floor6(request):
+def Floor6(request):
     room_list = Room.objects.order_by('name')
     room_dict = {'rooms':room_list}
-    return render(request, 'BH5_Floor6.html', context=room_dict)
+    return render(request, 'Floor6.html', context=room_dict)
 
 
-def BH5_GroundFloor(request):
+def GroundFloor(request):
     room_list = Room.objects.order_by('name')
     room_dict = {'rooms':room_list}
-    return render(request, 'BH5_GroundFloor.html', context=room_dict)
+    return render(request, 'GroundFloor.html', context=room_dict)
 
 
 def hostel_detail_view(request, hostel_name):
